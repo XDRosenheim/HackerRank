@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Linq;
 
-// ReSharper disable PossibleNullReferenceException
-// ReSharper disable SuggestVarOrType_BuiltInTypes
-// ReSharper disable ConvertToConstant.Local
-// ReSharper disable SuggestVarOrType_Elsewhere
-// ReSharper disable InconsistentNaming
-// ReSharper disable BuiltInTypeReferenceStyle
-
 namespace HackerRank {
     internal class Program {
         private static void Main( string[] args ) {
@@ -42,7 +35,12 @@ namespace HackerRank {
             //Console.Clear();
             #endregion
             #region 7. Time Conversion
-            TimeConversion();
+            //TimeConversion();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #region Temp
+            //();
             Console.ReadKey();
             Console.Clear();
             #endregion
@@ -52,7 +50,7 @@ namespace HackerRank {
             //Console.Clear();
             #endregion
         }
-        #region Easy
+        #region Warmup
         #region 1. Solve Me First
         private static void SolveMeFirst() {
             var val1 = Convert.ToInt32( Console.ReadLine() );
@@ -130,21 +128,31 @@ namespace HackerRank {
         #endregion
         #region 7. Time Conversion
         private static void TimeConversion() {
-            string time = Console.ReadLine();
-            string convertMe = "";
-            for(int i = 0; i < 2; i++) {
-                convertMe += time[i];
+            Console.WriteLine( DateTime.Parse( Console.ReadLine() ).ToString( "HH:mm:ss" ) ); 
+        }
+        #endregion
+        #endregion
+        #region Implementation
+        #region Angry Professor
+        private static void angry-professor() {
+            int t = Convert.ToInt32(Console.ReadLine());
+            for(int a0 = 0; a0 < t; a0++){
+                string[] tokens_n = Console.ReadLine().Split(' ');
+                int n = Convert.ToInt32(tokens_n[0]);
+                int k = Convert.ToInt32(tokens_n[1]);
+                string[] a_temp = Console.ReadLine().Split(' ');
+                int[] a = Array.ConvertAll(a_temp,Int32.Parse);
+
+
+
+
+                if ( classIsCancled ) {
+                    Console.WriteLine("YES");
+                }
+                else {
+                    Console.WriteLine("NO");
+                }
             }
-            int hour = Convert.ToInt32( time.Substring( 0, 2 ) );
-            string amORpm = time.Substring( time.Length - 2, 2 );
-            if(amORpm == "PM" && convertMe != "12") {
-                convertMe = ( hour + 12 ).ToString();
-            }
-            if(amORpm == "AM" && convertMe == "12") {
-                convertMe = "00";
-            }
-            time = convertMe + time.Substring( 2, time.Length - 4 );
-            Console.Write( time );
         }
         #endregion
         #endregion
