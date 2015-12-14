@@ -4,6 +4,7 @@ using System.Linq;
 namespace HackerRank {
     internal class Program {
         private static void Main( string[] args ) {
+            #region Warmup
             #region 1. Solve Me First
             //SolveMeFirst();
             //Console.ReadKey();
@@ -39,12 +40,30 @@ namespace HackerRank {
             //Console.ReadKey();
             //Console.Clear();
             #endregion
-            #region Temp
-            //();
+            #endregion
+            #region Implementation
+            #region 1. Angry Professor
+            //angryProfessor();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #region 3. The Utopian Tree
+            //UtopianTree();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #region 4. Find Digits
+            //FindDigits();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #endregion
+            #region 5. Sherlock and Squares
+            sherlockAndSquares();
             Console.ReadKey();
             Console.Clear();
             #endregion
-            #region Temp
+            #region
             //();
             //Console.ReadKey();
             //Console.Clear();
@@ -128,31 +147,83 @@ namespace HackerRank {
         #endregion
         #region 7. Time Conversion
         private static void TimeConversion() {
-            Console.WriteLine( DateTime.Parse( Console.ReadLine() ).ToString( "HH:mm:ss" ) ); 
+            Console.WriteLine( DateTime.Parse( Console.ReadLine() ).ToString( "HH:mm:ss" ) );
         }
         #endregion
         #endregion
         #region Implementation
-        #region Angry Professor
-        private static void angry-professor() {
-            int t = Convert.ToInt32(Console.ReadLine());
-            for(int a0 = 0; a0 < t; a0++){
-                string[] tokens_n = Console.ReadLine().Split(' ');
-                int n = Convert.ToInt32(tokens_n[0]);
-                int k = Convert.ToInt32(tokens_n[1]);
-                string[] a_temp = Console.ReadLine().Split(' ');
-                int[] a = Array.ConvertAll(a_temp,Int32.Parse);
-
-
-
-
-                if ( classIsCancled ) {
-                    Console.WriteLine("YES");
+        #region 1. Angry Professor
+        private static void angryProfessor() {
+            int t = Convert.ToInt32( Console.ReadLine() );
+            for(int a0 = 0; a0 < t; a0++) {
+                string[] tokens_n = Console.ReadLine().Split( ' ' );
+                int n = Convert.ToInt32( tokens_n[0] );
+                int k = Convert.ToInt32( tokens_n[1] );
+                string[] a_temp = Console.ReadLine().Split( ' ' );
+                int[] a = Array.ConvertAll( a_temp, Int32.Parse );
+                bool classIsCancled = true;
+                int arrivedToLate = 0, arrivedOnTime = 0;
+                foreach(int t1 in a) {
+                    if(t1 <= 0) {
+                        arrivedOnTime++;
+                    } else {
+                        arrivedToLate++;
+                    }
                 }
-                else {
-                    Console.WriteLine("NO");
-                }
+                if(arrivedOnTime >= k) classIsCancled = false;
+                Console.WriteLine( classIsCancled ? "YES" : "NO" );
             }
+        }
+        #endregion
+        #region 3. The Utopian Tree
+        private static void UtopianTree() {
+            var t = Convert.ToInt32( Console.ReadLine() );
+            for(var a0 = 0; a0 < t; a0++) {
+                var cycles = Convert.ToInt32( Console.ReadLine() );
+                var height = 1;
+                for(var i = 0; i < cycles; i++) {
+                    if(i % 2 != 0 || i == 0) {
+                        height++;
+                    } else {
+                        height *= 2;
+                    }
+                }
+                Console.WriteLine( height );
+            }
+        }
+        #endregion
+        #region 4. Find Digits
+        private static void FindDigits() {
+            var t = Convert.ToInt32( Console.ReadLine() );
+            for(var a0 = 0; a0 < t; a0++) {
+                var Ns = Console.ReadLine();
+                var n = Convert.ToInt32( Ns );
+                var result = Ns.Select( t1 => Convert.ToInt32( "" + t1 ) ).Count( x => x != 0 && n % x == 0 );
+                Console.WriteLine( result );
+            }
+        }
+        #endregion
+        #region 5. Sherlock and Squares
+        private static void sherlockAndSquares() {
+            var t = Convert.ToInt32( Console.ReadLine() );
+            for(var a0 = 0; a0 < t; a0++) {
+                var tokens_n = Console.ReadLine().Split( ' ' );
+                var a = Convert.ToInt32( tokens_n[0] );
+                var b = Convert.ToInt32( tokens_n[1] );
+                var howMany = 0;
+                for(var i = a; i <= b; i++) {
+                    var result = Math.Sqrt( i );
+                    if(result % 1 == 0) {
+                        howMany++;
+                    }
+                }
+                Console.WriteLine( howMany );
+            }
+        }
+        #endregion
+        #region
+        private static void temp() {
+
         }
         #endregion
         #endregion

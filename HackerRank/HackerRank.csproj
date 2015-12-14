@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Implementation\angryprofessor.cs" />
+    <Compile Include="Algorithms\Implementation\finddigits.cs" />
+    <Compile Include="Algorithms\Implementation\utopiantree.cs" />
     <Compile Include="Algorithms\Warmup\averybignumber.cs" />
     <Compile Include="Algorithms\Warmup\diagonaldifference.cs" />
     <Compile Include="Algorithms\Warmup\plusminus.cs" />
