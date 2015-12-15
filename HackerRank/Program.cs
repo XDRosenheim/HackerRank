@@ -69,14 +69,14 @@ namespace HackerRank {
             #endregion
             #region Strings
             #region 1. Pangrams
-            Pangrams();
-            Console.ReadKey();
-            Console.Clear();
+            //Pangrams();
+            //Console.ReadKey();
+            //Console.Clear();
             #endregion
             #region 2. Funny String
-            FunnyString();
-            Console.ReadKey();
-            Console.Clear();
+            //FunnyString();
+            //Console.ReadKey();
+            //Console.Clear();
             #endregion
             #endregion
             #region
@@ -257,12 +257,16 @@ namespace HackerRank {
             }
         }
         #endregion
-        #region 2. Funny String
+        #region 2. Funny String - WIP
         private static void FunnyString() {
             var t = Convert.ToInt32( Console.ReadLine() );
             for(var tLoop = 0; tLoop < t; tLoop++) {
                 var s = Console.ReadLine();
+                var r_temp = s.ToCharArray();
+                Array.Reverse( r_temp );
+                var r = new string( r_temp );
                 for(var i = 0; i < s.Length; i++) {
+
                 }
             }
         }
