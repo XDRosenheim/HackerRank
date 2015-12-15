@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+
+// ReSharper disable CompareOfFloatsByEqualityOperator
 
 namespace HackerRank {
     internal class Program {
@@ -57,11 +61,23 @@ namespace HackerRank {
             //Console.ReadKey();
             //Console.Clear();
             #endregion
-            #endregion
             #region 5. Sherlock and Squares
-            sherlockAndSquares();
+            //SherlockAndSquares();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #endregion
+            #region Strings
+            #region 1. Pangrams
+            Pangrams();
             Console.ReadKey();
             Console.Clear();
+            #endregion
+            #region 2. Funny String
+            FunnyString();
+            Console.ReadKey();
+            Console.Clear();
+            #endregion
             #endregion
             #region
             //();
@@ -204,26 +220,51 @@ namespace HackerRank {
         }
         #endregion
         #region 5. Sherlock and Squares
-        private static void sherlockAndSquares() {
+        private static void SherlockAndSquares() {
             var t = Convert.ToInt32( Console.ReadLine() );
             for(var a0 = 0; a0 < t; a0++) {
-                var tokens_n = Console.ReadLine().Split( ' ' );
-                var a = Convert.ToInt32( tokens_n[0] );
-                var b = Convert.ToInt32( tokens_n[1] );
-                var howMany = 0;
-                for(var i = a; i <= b; i++) {
-                    var result = Math.Sqrt( i );
-                    if(result % 1 == 0) {
-                        howMany++;
-                    }
-                }
-                Console.WriteLine( howMany );
+                var readLine = Console.ReadLine();
+                if(readLine == null) continue;
+                var tokens = readLine.Split( ' ' );
+                var a = Convert.ToInt32( tokens[0] );
+                var b = Convert.ToInt32( tokens[1] );
+                if(Math.Sqrt( a ) % 1 != 0) Console.WriteLine( ( (int)Math.Sqrt( a ) - (int)Math.Sqrt( b ) ) * -1 );
+                else Console.WriteLine( (int)Math.Sqrt( a ) - Math.Sqrt( b ) - 1 );
             }
         }
+
         #endregion
         #region
         private static void temp() {
 
+        }
+        #endregion
+        #endregion
+        #region Strings
+        #region 1. Pangrams
+        private static void Pangrams() {
+            var s = Console.ReadLine().ToLower().Replace( " ", string.Empty ).Replace( ".", string.Empty ).Replace( ",", string.Empty ).Replace( "-", string.Empty );
+            var a = new List<string>();
+            if(s.Length >= 26) {
+                for(var i = 0; i < s.Length; i++) {
+                    if(!a.Contains( s.Substring( i, 1 ) )) {
+                        a.Add( s.Substring( i, 1 ) );
+                    }
+                }
+                Console.WriteLine( a.Count == 26 ? "pangram" : "not pangram" );
+            } else {
+                Console.WriteLine( "not pangram" );
+            }
+        }
+        #endregion
+        #region 2. Funny String
+        private static void FunnyString() {
+            var t = Convert.ToInt32( Console.ReadLine() );
+            for(var tLoop = 0; tLoop < t; tLoop++) {
+                var s = Console.ReadLine();
+                for(var i = 0; i < s.Length; i++) {
+                }
+            }
         }
         #endregion
         #endregion
