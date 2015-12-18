@@ -44,6 +44,8 @@
     <Compile Include="Algorithms\Implementation\angryprofessor.cs" />
     <Compile Include="Algorithms\Implementation\finddigits.cs" />
     <Compile Include="Algorithms\Implementation\utopiantree.cs" />
+    <Compile Include="Algorithms\Sorting\correctnessandtheloopinvariant.cs" />
+    <Compile Include="Algorithms\Sorting\intrototutorialchallenges.cs" />
     <Compile Include="Algorithms\strings\pangrams.cs" />
     <Compile Include="Algorithms\Warmup\averybignumber.cs" />
     <Compile Include="Algorithms\Warmup\diagonaldifference.cs" />

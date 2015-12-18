@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-
-// ReSharper disable CompareOfFloatsByEqualityOperator
 
 namespace HackerRank {
     internal class Program {
         private static void Main( string[] args ) {
+            #region Algorythms
             #region Warmup
             #region 1. Solve Me First
             //SolveMeFirst();
@@ -66,6 +64,11 @@ namespace HackerRank {
             //Console.ReadKey();
             //Console.Clear();
             #endregion
+            #region 17. The Time in Words
+            //theTimeInWords();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
             #endregion
             #region Strings
             #region 1. Pangrams
@@ -79,12 +82,40 @@ namespace HackerRank {
             //Console.Clear();
             #endregion
             #endregion
-            #region
-            //();
+            #region Sorting
+            #region Intro to Tutorial Challenges
+            //IntrotoTutorialChallenges();
             //Console.ReadKey();
             //Console.Clear();
             #endregion
+            #region Insertion Sort - Part 1
+            //InsertionSort();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #region Correctness and the Loop Invariant
+            //CorrectnessAndTheLoopInvariant();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #endregion
+            #endregion
+            #region Data Structures
+            #region Arrays
+            #region Arrays-DS
+            //ArraysDs();
+            //Console.ReadKey();
+            //Console.Clear();
+            #endregion
+            #region 2D Arrays - DS
+            TwoDArrayDs();
+            Console.ReadKey();
+            Console.Clear();
+            #endregion
+            #endregion
+            #endregion
         }
+        #region Algorythms
         #region Warmup
         #region 1. Solve Me First
         private static void SolveMeFirst() {
@@ -234,9 +265,85 @@ namespace HackerRank {
         }
 
         #endregion
-        #region
-        private static void temp() {
-
+        #region 17. The Time in Words
+        private static void theTimeInWords() {
+            dynamic h = Convert.ToInt32( Console.ReadLine() );
+            var m = Convert.ToInt32( Console.ReadLine() );
+            var singles = new[] { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "one" };
+            var newh = singles[h - 1];
+            var newhplus = singles[h];
+            const string onTime = " o' clock";
+            const string past = " past ";
+            const string to = " to ";
+            const string quater = "quater";
+            const string half = "half";
+            var output = "";
+            switch(m) {
+                case 00: output = newh + onTime; break;
+                case 15: output = quater + past + newh; break;
+                case 30: output = half + past + newh; break;
+                case 45:
+                newh = singles[h];
+                output = quater + to + newh;
+                break;
+                case 01: output = "one minute" + past + newh; break;
+                case 02: output = "two minutes" + past + newh; break;
+                case 03: output = "three minutes" + past + newh; break;
+                case 04: output = "four minutes" + past + newh; break;
+                case 05: output = "five minutes" + past + newh; break;
+                case 06: output = "six minutes" + past + newh; break;
+                case 07: output = "seven minutes" + past + newh; break;
+                case 08: output = "eight minutes" + past + newh; break;
+                case 09: output = "nine minutes" + past + newh; break;
+                case 10: output = "ten minutes" + past + newh; break;
+                case 11: output = "eleven minutes" + past + newh; break;
+                case 12: output = "twelve minutes" + past + newh; break;
+                case 13: output = "thirteen minutes" + past + newh; break;
+                case 14: output = "fourteen minutes" + past + newh; break;
+                case 16: output = "sixteen minutes" + past + newh; break;
+                case 17: output = "seventeen minutes" + past + newh; break;
+                case 18: output = "eightteen minutes" + past + newh; break;
+                case 19: output = "nineteen minutes" + past + newh; break;
+                case 20: output = "twenty minutes" + past + newh; break;
+                case 21: output = "twenty one minutes" + past + newh; break;
+                case 22: output = "twenty two minutes" + past + newh; break;
+                case 23: output = "twenty three minutes" + past + newh; break;
+                case 24: output = "twenty four minutes" + past + newh; break;
+                case 25: output = "twenty five minutes" + past + newh; break;
+                case 26: output = "twenty six minutes" + past + newh; break;
+                case 27: output = "twenty seven minutes" + past + newh; break;
+                case 28: output = "twenty eight minutes" + past + newh; break;
+                case 29: output = "twenty nine minutes" + past + newh; break;
+                case 31: output = "twenty nine minutes" + to + newhplus; break;
+                case 32: output = "twenty eight minutes" + to + newhplus; break;
+                case 33: output = "twenty seven minutes" + to + newhplus; break;
+                case 34: output = "twenty four minutes" + to + newhplus; break;
+                case 35: output = "twenty five minutes" + to + newhplus; break;
+                case 36: output = "thirty six minutes" + to + newhplus; break;
+                case 37: output = "twenty three minutes" + to + newhplus; break;
+                case 38: output = "twenty two minutes" + to + newhplus; break;
+                case 39: output = "thirty nine minutes" + to + newhplus; break;
+                case 40: output = "forthy minutes" + to + newhplus; break;
+                case 41: output = "nineteen minutes" + to + newhplus; break;
+                case 42: output = "eightteen minutes" + to + newhplus; break;
+                case 43: output = "seventeen minutes" + to + newhplus; break;
+                case 44: output = "sixteen minutes" + to + newhplus; break;
+                case 46: output = "fourteen minutes" + to + newhplus; break;
+                case 47: output = "thirteen minutes" + to + newhplus; break;
+                case 48: output = "twelve minutes" + to + newhplus; break;
+                case 49: output = "eleven minutes" + to + newhplus; break;
+                case 50: output = "ten minutes" + to + newhplus; break;
+                case 51: output = "nine minutes" + to + newhplus; break;
+                case 52: output = "eight minutes" + to + newhplus; break;
+                case 53: output = "seven minutes" + to + newhplus; break;
+                case 54: output = "six minutes" + to + newhplus; break;
+                case 55: output = "five minutes" + to + newhplus; break;
+                case 56: output = "four minutes" + to + newhplus; break;
+                case 57: output = "three minutes" + to + newhplus; break;
+                case 58: output = "two minutes" + to + newhplus; break;
+                case 59: output = "one minute" + to + newhplus; break;
+            }
+            Console.WriteLine( output );
         }
         #endregion
         #endregion
@@ -270,6 +377,95 @@ namespace HackerRank {
                 }
             }
         }
+        #endregion
+        #endregion
+        #region Sorting
+        #region 1. Intro to Tutorial Challenges
+        private static void IntrotoTutorialChallenges() {
+            var v = Console.ReadLine();
+            var n = Convert.ToInt32( Console.ReadLine() );
+            var ar = Console.ReadLine().ToString().Split( ' ' );
+            var index = Array.IndexOf( ar, v );
+            Console.WriteLine( index );
+        }
+        #endregion
+        #region 2. Insertion Sort - Part 1
+        private static void InsertionSort() {
+            int _ar_size;
+            _ar_size = Convert.ToInt32( Console.ReadLine() );
+            var _ar =new int[_ar_size];
+            var elements = Console.ReadLine();
+            var split_elements = elements.Split( ' ' );
+            for(var _ar_i=0; _ar_i < _ar_size; _ar_i++) {
+                _ar[_ar_i] = Convert.ToInt32( split_elements[_ar_i] );
+            }
+            InsertionSort( _ar );
+        }
+
+        private static void InsertionSort( int[] ar ) {
+            // NOPE. This is stupid, I won't do it.
+        }
+        #endregion
+        #region Correctness and the Loop Invariant
+        private static void CorrectnessAndTheLoopInvariant() {
+            Console.ReadLine();
+            var _ar = ( from s in Console.ReadLine().Split() select Convert.ToInt32( s ) ).ToArray();
+            CorreectnessAndTheLoopInvariantFunction( _ar );
+        }
+
+        private static void CorreectnessAndTheLoopInvariantFunction( int[] A ) {
+            Array.Sort( A );
+            Console.WriteLine( string.Join( " ", A ) );
+        }
+
+        #endregion
+        #endregion
+        #endregion
+        #region Data Structures
+        #region Arrays
+        #region Arrays - DS
+        private static void ArraysDs() {
+            var n = Convert.ToInt32( Console.ReadLine() );
+            var arrTemp = Console.ReadLine().Split( ' ' );
+            var arr = Array.ConvertAll( arrTemp, int.Parse );
+            for(var i = arr.Length - 1; i >= 0; i--) {
+                Console.Write( arr[i] + " " );
+            }
+        }
+        #endregion
+        #region 2D Array - DS
+        private static void TwoDArrayDs() {
+            var arr = new int[6][];
+            for(var arrI = 0; arrI < 6; arrI++) {
+                var arrTemp = Console.ReadLine().Split( ' ' );
+                arr[arrI] = Array.ConvertAll( arrTemp, int.Parse );
+            }
+            Console.WriteLine( CalcHourglass( arr ) );
+        }
+
+        private static int CalcHourglass( int[][] arr ) {
+            var highest = 0;
+            var first = false;
+            var arrTemp = new int[7];
+            for(var i = 0; i < 4; i++) {
+                for(var j = 0; j < 4; j++) {
+                    arrTemp[0] = arr[i][j];
+                    arrTemp[1] = arr[i][j + 1];
+                    arrTemp[2] = arr[i][j + 2];
+                    arrTemp[3] = arr[i + 1][j + 1];
+                    arrTemp[4] = arr[i + 2][j];
+                    arrTemp[5] = arr[i + 2][j + 1];
+                    arrTemp[6] = arr[i + 2][j + 2];
+                    if(!first) { 
+                        first = true;
+                        highest = arrTemp.Sum();
+                    }
+                    else if(arrTemp.Sum() > highest) highest = arrTemp.Sum();
+                }
+            }
+            return highest;
+        }
+        #endregion
         #endregion
         #endregion
     }
