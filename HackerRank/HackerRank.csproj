@@ -54,6 +54,8 @@
     <Compile Include="Algorithms\Warmup\solvemefirst.cs" />
     <Compile Include="Algorithms\Warmup\staircase.cs" />
     <Compile Include="Algorithms\Warmup\timeconversion.cs" />
+    <Compile Include="Data Structures\Arrays\2darrayds.cs" />
+    <Compile Include="Data Structures\Arrays\arraysds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
