@@ -5,7 +5,7 @@ using System.Linq;
 namespace HackerRank {
     internal class Program {
         private static void Main( string[] args ) {
-            #region Algorythms
+            #region Algorythms -- WIP
             #region Warmup
             #region 1. Solve Me First
             //SolveMeFirst();
@@ -43,7 +43,7 @@ namespace HackerRank {
             //Console.Clear();
             #endregion
             #endregion
-            #region Implementation
+            #region Implementation -- WIP
             #region 1. Angry Professor
             //angryProfessor();
             //Console.ReadKey();
@@ -68,6 +68,11 @@ namespace HackerRank {
             //theTimeInWords();
             //Console.ReadKey();
             //Console.Clear();
+            #endregion
+            #region 19. Encryption -- WIP
+            Encryption();
+            Console.ReadKey();
+            Console.Clear();
             #endregion
             #endregion
             #region Strings
@@ -108,14 +113,14 @@ namespace HackerRank {
             //Console.Clear();
             #endregion
             #region 2D Arrays - DS
-            TwoDArrayDs();
-            Console.ReadKey();
-            Console.Clear();
+            //TwoDArrayDs();
+            //Console.ReadKey();
+            //Console.Clear();
             #endregion
             #endregion
             #endregion
         }
-        #region Algorythms
+        #region Algorythms -- WIP
         #region Warmup
         #region 1. Solve Me First
         private static void SolveMeFirst() {
@@ -198,7 +203,7 @@ namespace HackerRank {
         }
         #endregion
         #endregion
-        #region Implementation
+        #region Implementation -- WIP
         #region 1. Angry Professor
         private static void angryProfessor() {
             int t = Convert.ToInt32( Console.ReadLine() );
@@ -346,6 +351,23 @@ namespace HackerRank {
             Console.WriteLine( output );
         }
         #endregion
+        #region 19. Encryption -- WIP
+        private static void Encryption() {
+            var input = Console.ReadLine().Replace( " ", string.Empty );
+            var root = (int)Math.Sqrt( input.Length );
+            var encryptedString = new string[root][];
+            var counter = 0;
+            for(var i = 0; i < root + 1; i++) {
+                for(var j = 0; j < root; j++) {
+                    encryptedString[i][j] = input.Substring( counter, 1 );
+                    counter++;
+                }
+            }
+            foreach(var s in encryptedString) {
+                Console.WriteLine( s );
+            }
+        }
+        #endregion
         #endregion
         #region Strings
         #region 1. Pangrams
@@ -456,11 +478,10 @@ namespace HackerRank {
                     arrTemp[4] = arr[i + 2][j];
                     arrTemp[5] = arr[i + 2][j + 1];
                     arrTemp[6] = arr[i + 2][j + 2];
-                    if(!first) { 
+                    if(!first) {
                         first = true;
                         highest = arrTemp.Sum();
-                    }
-                    else if(arrTemp.Sum() > highest) highest = arrTemp.Sum();
+                    } else if(arrTemp.Sum() > highest) highest = arrTemp.Sum();
                 }
             }
             return highest;
